@@ -27,7 +27,7 @@ class BinarySearch extends Component {
   binarySearch(count, array, value, start = 0, end = array.length -1) {
     count++;
     if (start > end) {
-      console.log('did not find', count)
+      // console.log('did not find', count)
       this.setState({
         answer: count,
         found: false
@@ -36,9 +36,9 @@ class BinarySearch extends Component {
     }
     const index = Math.floor((start + end) / 2);
     const item = array[index];
-    console.log('item, value', item, value)
-    if (item === value) {
-      console.log('item === value', count)
+    // console.log('item, value', item, value)
+    if (item == value) {
+      // console.log('item === value', count)
       this.setState({
         answer: count,
         found: true
@@ -67,7 +67,7 @@ class BinarySearch extends Component {
         </section>
         <SearchForm findNum={num => this.findNum(num)}/>
         <p>{this.state.answer && this.state.found === true ? `${this.state.number} was found on try #${this.state.answer}` : ``}</p>
-        <p>{this.state.found == false ? `${this.state.number} was not found in the array. The algorithm ran ${this.state.answer} times before it came it this conclusion` : ''}</p>
+        <p>{this.state.found === false ? `${this.state.number} was not found in the array. The algorithm ran ${this.state.answer} times before it came it this conclusion` : ''}</p>
       </section>
     );
   }
