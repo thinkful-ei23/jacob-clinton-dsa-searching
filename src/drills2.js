@@ -53,6 +53,26 @@ class BinarySearchTree {
     }
     return values;
   }
+  dfsInOrder(values=[]) {
+    if (this.left) {
+      values = this.left.dfsInOrder(values);
+    }
+    values.push(this.key);
+    if (this.right) {
+      values = this.right.dfsInOrder(values);
+    }
+    return values;
+  }
+  dfsPostOrder(values=[]) {
+    if (this.left) {
+      values = this.left.dfsPostOrder(values);
+    }
+    if (this.right) {
+      values = this.right.dfsPostOrder(values);
+    }
+    values.push(this.key)
+    return values;
+  }
 }
 function treeTraversal() {
   let bst = new BinarySearchTree();
@@ -61,6 +81,8 @@ function treeTraversal() {
     bst.insert(dataSet[i]);  
   }
   console.log(bst.dfsPreOrder());
+  console.log(bst.dfsInOrder());
+  console.log(bst.dfsPostOrder());
 }
 
 treeTraversal();
