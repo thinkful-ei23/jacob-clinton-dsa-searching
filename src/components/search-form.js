@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './search-form.css';
 class SearchForm extends Component {
   onSubmit(event) {
     event.preventDefault();

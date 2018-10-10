@@ -11,19 +11,22 @@ class LinearSearch extends Component {
     }
   }
   findNum(num) {
-    console.log(`findNum was called with ${num}`);
+    this.setState({
+      number: null,
+      answer: null
+    });
     this.setState({
       number: num
     });
+    num = num - 0;
     for (let i=0; i<dataArray.length; i++) {
       if (dataArray[i] === num) {
-        this.setState({
+        return this.setState({
           answer: i + 1
         });
       }
     }
   }
-
   render() {
     let prettyArray = dataArray.map(num => {
       return (
